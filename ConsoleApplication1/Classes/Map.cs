@@ -1,8 +1,10 @@
-﻿namespace ConsoleApplication1
+﻿using ConsoleApplication1.Interfaces;
+
+namespace ConsoleApplication1
 {
-    public class Map
+    public class Map: IMap
     {
-        public readonly double[] size;
-        public readonly double isolationDegree;
+        public double size { get; set; }
+        public double isolationDegree { get; set; }
     }
 }

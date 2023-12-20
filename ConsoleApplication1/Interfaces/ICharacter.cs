@@ -2,12 +2,12 @@ namespace ConsoleApplication1.Interfaces
 {
     public interface ICharacter
     {
-        double head { get; set; }
-        double chest { get; set; }
-        double stomach { get; set; }
-        double leftArm { get; set; }
-        double leftLeg { get; set; }
-        double rightArm { get; set; }
-        double rightLeg { get; set; }
+        BodyPart head { get; set; }
+        BodyPart chest { get; set; }
+        BodyPart stomach { get; set; }
+        BodyPart leftArm { get; set; }
+        BodyPart leftLeg { get; set; }
+        BodyPart rightArm { get; set; }
+        BodyPart rightLeg { get; set; }
     }
 }

@@ -4,15 +4,14 @@ namespace ConsoleApplication1
 {
     public class Enemy : ICharacter
     {
-        public double head { get; set; }
-        public double chest { get; set; }
-        public double stomach { get; set; }
-        public double leftArm { get; set; }
-        public double leftLeg { get; set; }
-        public double rightArm { get; set; }
-        public double rightLeg { get; set; }
+        public BodyPart head { get; set; }
+        public BodyPart chest { get; set; }
+        public BodyPart stomach { get; set; }
+        public BodyPart leftArm { get; set; }
+        public BodyPart leftLeg { get; set; }
+        public BodyPart rightArm { get; set; }
+        public BodyPart rightLeg { get; set; }
 
         private double damage { get; set; }
-        //private ICharacter enemyStats;
     }
 }

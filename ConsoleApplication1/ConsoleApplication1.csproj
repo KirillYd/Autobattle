@@ -40,11 +40,14 @@
         <Reference Include="System.Xml"/>
     </ItemGroup>
     <ItemGroup>
+        <Compile Include="Classes\BodyPart.cs" />
+        <Compile Include="Classes\BulletType.cs" />
         <Compile Include="Classes\Enemy.cs" />
         <Compile Include="Classes\Hero.cs" />
         <Compile Include="Classes\Map.cs" />
         <Compile Include="Classes\Weapon.cs" />
         <Compile Include="Interfaces\ICharacter.cs" />
+        <Compile Include="Interfaces\IMap.cs" />
         <Compile Include="Program.cs"/>
         <Compile Include="Properties\AssemblyInfo.cs"/>
     </ItemGroup>
