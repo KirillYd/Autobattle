@@ -43,8 +43,7 @@
         <Compile Include="Classes\Enemy.cs" />
         <Compile Include="Classes\Hero.cs" />
         <Compile Include="Classes\Map.cs" />
-        <Compile Include="Classes\MeleeWeapon.cs" />
-        <Compile Include="Classes\RangedWeapon.cs" />
+        <Compile Include="Classes\Weapon.cs" />
         <Compile Include="Interfaces\ICharacter.cs" />
         <Compile Include="Program.cs"/>
         <Compile Include="Properties\AssemblyInfo.cs"/>

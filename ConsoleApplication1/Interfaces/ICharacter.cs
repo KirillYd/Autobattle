@@ -2,7 +2,6 @@ namespace ConsoleApplication1.Interfaces
 {
     public interface ICharacter
     {
-        double damage { get; set; }
         double head { get; set; }
         double chest { get; set; }
         double stomach { get; set; }

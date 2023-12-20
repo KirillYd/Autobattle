@@ -1,6 +1,6 @@
 namespace ConsoleApplication1
 {
-    public class RangedWeapon
+    public class Weapon
     {
         
     }
