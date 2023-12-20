@@ -1,3 +1,5 @@
+using System;
+
 namespace ConsoleApplication1.Interfaces
 {
     public interface ICharacter
@@ -9,5 +11,11 @@ namespace ConsoleApplication1.Interfaces
         BodyPart leftLeg { get; set; }
         BodyPart rightArm { get; set; }
         BodyPart rightLeg { get; set; }
+        double getDamage(IMap map);
+        bool isAlive();
+
+
+
+        //bool isAlive();
     }
 }

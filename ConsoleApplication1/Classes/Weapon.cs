@@ -13,7 +13,7 @@ namespace ConsoleApplication1
         public float shotPerStep { get; set; }
         public BulletType bulletType { get; set; }
 
-        public Weapon(string name, string type, float distance, float accuracy, float damage, BulletType bulletType, float shotPerStep)
+        public Weapon(string name, string type, float distance, float accuracy, BulletType bulletType, float shotPerStep)
         {
             this.name = name;
             this.type = type;

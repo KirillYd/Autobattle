@@ -43,6 +43,7 @@
         <Compile Include="Classes\BodyPart.cs" />
         <Compile Include="Classes\BulletType.cs" />
         <Compile Include="Classes\Enemy.cs" />
+        <Compile Include="Classes\Game.cs" />
         <Compile Include="Classes\Hero.cs" />
         <Compile Include="Classes\Map.cs" />
         <Compile Include="Classes\Weapon.cs" />
