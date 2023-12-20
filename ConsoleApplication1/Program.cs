@@ -11,6 +11,7 @@
             var hero = new Hero(body, body, body, body, body, body, body, weapon, weapon, weapon);
             var game = new Game(map, hero,hero);
             game.Battle();
+            //game.GetRandomBodyPart(50.0, game.hero);
         }
     }
 }

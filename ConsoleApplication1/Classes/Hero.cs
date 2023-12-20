@@ -22,7 +22,6 @@ namespace ConsoleApplication1
         {
             foreach (var type in this.GetType().GetProperties())
             {
-                //Console.WriteLine('1');
                 if (type.PropertyType.Name == "BodyPart")
                 {
                     var y = type?.GetValue(this, null).GetType().GetProperty("hp");
