@@ -4,16 +4,18 @@
     {
         public double hp { get; set; }
         public double armorInfluence { get; set; }
-
-        public void TakeDamage(double damage)
-        {
-            hp -= damage;
-        }
-
-        public BodyPart(float hp, float armorInfluence)
+        public string partType { get; set; }
+        
+        public BodyPart(double hp, double armorInfluence, string partType)
         {
             this.hp = hp;
             this.armorInfluence = armorInfluence;
+            this.partType = partType;
+        }
+        
+        public void TakeDamage(double damage)
+        {
+            hp -= damage + armorInfluence;
         }
     }
 }

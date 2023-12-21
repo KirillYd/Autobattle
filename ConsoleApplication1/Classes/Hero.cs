@@ -5,14 +5,29 @@ namespace ConsoleApplication1
 {
     public class Hero : ICharacter
     {
-        public BodyPart head { get; set; }
+        /*public BodyPart head { get; set; }
         public BodyPart chest { get; set; }
         public BodyPart stomach { get; set; }
         
         public BodyPart leftArm { get; set; }
         public BodyPart leftLeg { get; set; }
         public BodyPart rightArm { get; set; }
-        public BodyPart rightLeg { get; set; }
+        public BodyPart rightLeg { get; set; }*/
+
+
+        public BodyPart[] body { get; set; }
+        public Weapon meleeWeapon { get ; set; }
+        public  Weapon rangedWeapon1 { get; set; }
+        public  Weapon rangedWeapon2 { get; set; }
+        
+        public Hero(BodyPart[] body, Weapon meleeWeapon, Weapon rangedWeapon1, Weapon rangedWeapon2)
+        {
+            this.body = body;
+            this.meleeWeapon = meleeWeapon;
+            this.rangedWeapon1 = rangedWeapon1;
+            this.rangedWeapon2 = rangedWeapon2;
+        }
+
         public double getDamage(IMap map)
         {
             return rangedWeapon1.GetAverageDamage(map);
@@ -20,38 +35,24 @@ namespace ConsoleApplication1
 
         public bool isAlive()
         {
-            foreach (var type in this.GetType().GetProperties())
+            var damagedPartCnt = 0;
+            foreach (var bodyPart in body)
             {
-                if (type.PropertyType.Name == "BodyPart")
+                if (bodyPart.hp <= 0)
                 {
-                    var y = type?.GetValue(this, null).GetType().GetProperty("hp");
-                    if (Convert.ToInt32(y.GetValue(type.GetValue(this))) <= 0)
-                        return false;
+                    damagedPartCnt++;
                 }
             }
 
-            return true;
+            return damagedPartCnt >= 2;
         }
 
-
-        public Weapon meleeWeapon { get ; set; }
-        public  Weapon rangedWeapon1 { get; set; }
-        public  Weapon rangedWeapon2 { get; set; }
-        
-
-        public Hero(BodyPart head, BodyPart chest, BodyPart stomach, BodyPart leftArm, BodyPart rightArm, BodyPart leftLeg, BodyPart rightLeg, Weapon meleeWeapon, Weapon rangedWeapon1, Weapon rangedWeapon2)
+        public BodyPart GetRandomBodyPart()
         {
-            this.head = head;
-            this.chest = chest;
-            this.stomach = stomach;
-            this.leftArm = leftArm;
-            this.rightArm = rightArm;
-            this.leftLeg = leftLeg;
-            this.rightLeg = rightLeg;
-            this.meleeWeapon = meleeWeapon;
-            this.rangedWeapon1 = rangedWeapon1;
-            this.rangedWeapon2 = rangedWeapon2;
+            var rnd = new Random();
+            return body[rnd.Next(body.Length)];
         }
+        
         
         
     }

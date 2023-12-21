@@ -26,6 +26,7 @@ namespace ConsoleApplication1
         
         public double GetAverageDamage(IMap map)
         {
+            //rnd
             var maxOpenDist = map.size * (1 - map.isolationDegree);
             var potentialAccuracy = (distance / maxOpenDist) * accuracy / 100;
             var resultAccuracy = potentialAccuracy > 1 ? 1 : potentialAccuracy;
