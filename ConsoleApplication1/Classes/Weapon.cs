@@ -1,4 +1,5 @@
 using System;
+using System.Net.Mime;
 using ConsoleApplication1.Interfaces;
 
 namespace ConsoleApplication1
@@ -11,6 +12,7 @@ namespace ConsoleApplication1
         public float accuracy { get; set; }
         public float shotPerStep { get; set; }
         public IBullet bulletType { get; set; }
+        private Random rnd = new Random();
 
         public Weapon(string name, string type, float distance, float accuracy, IBullet bulletType, float shotPerStep)
         {
@@ -24,11 +26,24 @@ namespace ConsoleApplication1
         
         public double GetAverageDamage(IMap map)
         {
-            //rnd
+            double resultDamage = 0;
+            double resultAccuracy = GetAccuracy(map);
+            for (int i = 0; i < shotPerStep; i++)
+            {
+                if (rnd.Next(0, 100) < resultAccuracy)
+                {
+                    resultDamage += bulletType.damage;
+                }
+            }
+            
+            return resultDamage;
+        }
+
+        private double GetAccuracy(IMap map)
+        {
             var maxOpenDist = map.size * (1 - map.isolationDegree);
-            var potentialAccuracy = (distance / maxOpenDist) * accuracy / 100;
-            var resultAccuracy = potentialAccuracy > 1 ? 1 : potentialAccuracy;
-            return resultAccuracy * shotPerStep * bulletType.damage;
+            var potentialAccuracy = (distance / maxOpenDist) * accuracy;
+            return potentialAccuracy > 100 ? 100 : potentialAccuracy;
         }
     }
 }

@@ -1,0 +1,87 @@
+﻿{
+  "body":
+  {
+    "head": {
+      "hp": 50,
+      "armorInfluence": 0
+    },
+    "stomach": {
+      "hp": 100,
+      "armorInfluence": 0
+    },
+    "chest": {
+      "hp": 100,
+      "armorInfluence": 0
+    },
+    "leftArm": {
+      "hp": 100,
+      "armorInfluence": 0
+    },
+    "RightArm": {
+      "hp": 100,
+      "armorInfluence": 0
+    },
+    "leftLeg": {
+      "hp": 100,
+      "armorInfluence": 0
+    },
+    "RightLeg": {
+      "hp": 100,
+      "armorInfluence": 0
+    }
+  },
+  "bullets": {
+    "1":
+    {
+      "bulType": "БП",
+      "accuracy": -2,
+      "damage": 50
+    },
+    "2":
+    {
+      "bulType": "ПС",
+      "accuracy": 0,
+      "damage": 45
+    },
+    "3":
+    {
+      "bulType": "Лезвие",
+      "accuracy": 0,
+      "damage": 70
+    }
+  },
+  "weapons": {
+    "weapon1":
+    {
+      "name": "АК47",
+      "type": "1",
+      "distance": 70,
+      "accuracy": 50,
+      "shotPerStep": 3
+    },
+    "weapon2":
+    {
+      "name": "СВД",
+      "type": "1",
+      "distance": 200,
+      "accuracy": 80,
+      "shotPerStep": 1
+    },
+    "weapon3":
+    {
+      "name": "ПМ",
+      "type": "1",
+      "distance": 25,
+      "accuracy": 70,
+      "shotPerStep": 1
+    },
+    "weapon4":
+    {
+      "name": "Нож",
+      "type": "3",
+      "distance": 3,
+      "accuracy": 90,
+      "shotPerStep": 1
+    }
+  }
+}

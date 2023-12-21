@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using ConsoleApplication1.Interfaces;
 using System.Linq;
 
@@ -9,12 +10,14 @@ namespace ConsoleApplication1
         public IMap map;
         public ICharacter hero;
         public ICharacter enemy;
+        public readonly TextWriter writer;
 
-        public Game(IMap map, ICharacter hero, ICharacter enemy)
+        public Game(IMap map, ICharacter hero, ICharacter enemy, TextWriter writer)
         {
             this.map = map;
             this.hero = hero;
             this.enemy = enemy;
+            this.writer = writer;
         }
 
         public void DoNextStep()
@@ -31,7 +34,7 @@ namespace ConsoleApplication1
             {
                 DoNextStep();
             }   
-            Console.WriteLine("game over");
+            writer.WriteLine("game over");
         }
     }
 }

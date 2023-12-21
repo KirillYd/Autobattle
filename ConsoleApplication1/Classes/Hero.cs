@@ -1,5 +1,7 @@
 using System;
+using System.Linq;
 using ConsoleApplication1.Interfaces;
+
 
 namespace ConsoleApplication1
 {
@@ -45,7 +47,7 @@ namespace ConsoleApplication1
         public IBodyPart GetRandomBodyPart()
         {
             var rnd = new Random();
-            return body[rnd.Next(body.Length)];
+            return body.Where(x => x.hp > 0).ToArray()[rnd.Next(body.Length)];
         }
     }
 }
