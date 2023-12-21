@@ -17,14 +17,12 @@ namespace ConsoleApplication1
             this.enemy = enemy;
         }
 
-
-
-
         public void DoNextStep()
         {
-            var damage = hero.getDamage(map);
-            enemy.GetRandomBodyPart().TakeDamage(damage);
-            // Console.WriteLine("Осталось HP:"+ enemy.head.hp);
+            var heroDamage = hero.getBestDamage(map);
+            var enemyDamage = enemy.getBestDamage(map);
+            hero.GetRandomBodyPart().TakeDamage(enemyDamage);
+            enemy.GetRandomBodyPart().TakeDamage(heroDamage);
         }
 
         public void Battle()

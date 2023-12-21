@@ -47,8 +47,11 @@
         <Compile Include="Classes\Hero.cs" />
         <Compile Include="Classes\Map.cs" />
         <Compile Include="Classes\Weapon.cs" />
+        <Compile Include="Interfaces\IBodyPart.cs" />
+        <Compile Include="Interfaces\IBullet.cs" />
         <Compile Include="Interfaces\ICharacter.cs" />
         <Compile Include="Interfaces\IMap.cs" />
+        <Compile Include="Interfaces\IWeapon.cs" />
         <Compile Include="Program.cs"/>
         <Compile Include="Properties\AssemblyInfo.cs"/>
     </ItemGroup>

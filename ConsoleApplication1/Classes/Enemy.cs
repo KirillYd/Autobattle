@@ -5,12 +5,27 @@ namespace ConsoleApplication1
 {
     public class Enemy : ICharacter
     {
-        private double damage { get; set; }
-        public BodyPart[] body { get; set; }
+        public IBodyPart[] body { get; set; }
+        public IWeapon[] weapons { get; set; }
 
-        public double getDamage(IMap map=null)
+        public Enemy(IBodyPart[] body, IWeapon[] weapons)
         {
-            return damage;
+            this.body = body;
+            this.weapons = weapons;
+        }
+
+        public double getBestDamage(IMap map)
+        {
+            double bestDamage = 0;
+            foreach (var weapon in weapons)
+            {
+                if (weapon.GetAverageDamage(map) > bestDamage)
+                {
+                    bestDamage = weapon.GetAverageDamage(map);
+                }
+            }
+            
+            return bestDamage;
         }
 
         public bool isAlive()
@@ -27,16 +42,10 @@ namespace ConsoleApplication1
             return damagedPartCnt >= 2;
         }
 
-        public BodyPart GetRandomBodyPart()
+        public IBodyPart GetRandomBodyPart()
         {
             var rnd = new Random();
             return body[rnd.Next(body.Length)];
         }
-
-        public Enemy(BodyPart[] body)
-        {
-            this.body = body;
-        }
-        
     }
 }

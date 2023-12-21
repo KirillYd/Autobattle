@@ -1,6 +1,8 @@
-﻿namespace ConsoleApplication1
+﻿using ConsoleApplication1.Interfaces;
+
+namespace ConsoleApplication1
 {
-    public class BodyPart
+    public class BodyPart: IBodyPart
     {
         public double hp { get; set; }
         public double armorInfluence { get; set; }

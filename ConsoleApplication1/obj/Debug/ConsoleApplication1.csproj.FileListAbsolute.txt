@@ -5,3 +5,9 @@ C:\Users\acer\Desktop\AutoBattle\ConsoleApplication1\ConsoleApplication1\obj\Deb
 C:\Users\acer\Desktop\AutoBattle\ConsoleApplication1\ConsoleApplication1\obj\Debug\ConsoleApplication1.csproj.CoreCompileInputs.cache
 C:\Users\acer\Desktop\AutoBattle\ConsoleApplication1\ConsoleApplication1\obj\Debug\ConsoleApplication1.exe
 C:\Users\acer\Desktop\AutoBattle\ConsoleApplication1\ConsoleApplication1\obj\Debug\ConsoleApplication1.pdb
+C:\Users\Andrew\RiderProjects\Autobattle\ConsoleApplication1\bin\Debug\ConsoleApplication1.exe
+C:\Users\Andrew\RiderProjects\Autobattle\ConsoleApplication1\bin\Debug\ConsoleApplication1.pdb
+C:\Users\Andrew\RiderProjects\Autobattle\ConsoleApplication1\obj\Debug\ConsoleApplication1.csproj.AssemblyReference.cache
+C:\Users\Andrew\RiderProjects\Autobattle\ConsoleApplication1\obj\Debug\ConsoleApplication1.csproj.CoreCompileInputs.cache
+C:\Users\Andrew\RiderProjects\Autobattle\ConsoleApplication1\obj\Debug\ConsoleApplication1.exe
+C:\Users\Andrew\RiderProjects\Autobattle\ConsoleApplication1\obj\Debug\ConsoleApplication1.pdb
