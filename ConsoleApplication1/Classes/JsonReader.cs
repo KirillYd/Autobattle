@@ -17,9 +17,9 @@ namespace ConsoleApplication1
             Data = JsonSerializer.Deserialize<Dictionary<string, Dictionary<string, object>>>(jsonContent);
         }
 
-        public List<BodyPart> GetBodyParts()
+        public IBodyPart[] GetBodyParts()
         {
-            List<BodyPart> body = new List<BodyPart>();
+            List<IBodyPart> body = new List<IBodyPart>();
 
             foreach (var part in Data["body"])
             {
@@ -31,12 +31,12 @@ namespace ConsoleApplication1
                 body.Add(bodyPart);
             }
 
-            return body;
+            return body.ToArray();
         }
 
-        public List<Weapon> GetWeapons()
+        public IWeapon[] GetWeapons()
         {
-            List<Weapon> weapons = new List<Weapon>();
+            List<IWeapon> weapons = new List<IWeapon>();
 
             // Создать объекты класса Weapon из данных JSON
             foreach (var weaponData in Data["weapons"])
@@ -54,7 +54,7 @@ namespace ConsoleApplication1
                 weapons.Add(weapon);
             }
 
-            return weapons;
+            return weapons.ToArray();
         }
 
         private IBullet GetBullet(string type)

@@ -10,6 +10,6 @@ namespace ConsoleApplication1.Interfaces
         
         double getBestDamage(IMap map);
         bool isAlive();
-        IBodyPart GetRandomBodyPart();
+        IBodyPart GetRandomBodyPart(Random rnd);
     }
 }

@@ -11,6 +11,7 @@ namespace ConsoleApplication1
         public ICharacter hero;
         public ICharacter enemy;
         public readonly TextWriter writer;
+        private Random rnd = new Random();
 
         public Game(IMap map, ICharacter hero, ICharacter enemy, TextWriter writer)
         {
@@ -24,12 +25,15 @@ namespace ConsoleApplication1
         {
             var heroDamage = hero.getBestDamage(map);
             var enemyDamage = enemy.getBestDamage(map);
-            hero.GetRandomBodyPart().TakeDamage(enemyDamage);
-            enemy.GetRandomBodyPart().TakeDamage(heroDamage);
+            var part = hero.GetRandomBodyPart(rnd);
+            part.TakeDamage(enemyDamage);
+            writer.WriteLine(part.partType);
+            enemy.GetRandomBodyPart(rnd).TakeDamage(heroDamage);
         }
 
         public void Battle()
         {
+            writer.WriteLine("Игра началась");
             while(hero.isAlive() && enemy.isAlive())
             {
                 DoNextStep();

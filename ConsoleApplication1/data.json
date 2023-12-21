@@ -17,7 +17,7 @@
       "hp": 100,
       "armorInfluence": 0
     },
-    "RightArm": {
+    "rightArm": {
       "hp": 100,
       "armorInfluence": 0
     },
@@ -25,7 +25,7 @@
       "hp": 100,
       "armorInfluence": 0
     },
-    "RightLeg": {
+    "rightLeg": {
       "hp": 100,
       "armorInfluence": 0
     }

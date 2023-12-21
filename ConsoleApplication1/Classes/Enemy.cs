@@ -40,13 +40,12 @@ namespace ConsoleApplication1
                 }
             }
 
-            return damagedPartCnt >= 2;
+            return !(damagedPartCnt >= 2);
         }
 
-        public IBodyPart GetRandomBodyPart()
+        public IBodyPart GetRandomBodyPart(Random rnd)
         {
-            var rnd = new Random();
-            return body.Where(x => x.hp > 0).ToArray()[rnd.Next(body.Length)];
+            return body.Where(x => x.hp > 0).ToArray()[rnd.Next(body.Length-1)];
         }
     }
 }
