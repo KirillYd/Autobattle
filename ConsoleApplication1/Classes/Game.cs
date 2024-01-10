@@ -2,18 +2,19 @@
 using System.IO;
 using ConsoleApplication1.Interfaces;
 using System.Linq;
+using Ninject;
 
 namespace ConsoleApplication1
 {
-    public class Game
+    public class Game: IGame
     {
-        public IMap map;
-        public ICharacter hero;
-        public ICharacter enemy;
-        public readonly TextWriter writer;
+        public IMap map { get; set; }
+        public ICharacter hero { get; set; }
+        public ICharacter enemy { get; set; }
+        private readonly TextWriter writer;
         private Random rnd = new Random();
 
-        public Game(IMap map, ICharacter hero, ICharacter enemy, TextWriter writer)
+        public Game(IMap map, [Named("Hero")] ICharacter hero, [Named("Enemy")] ICharacter enemy, TextWriter writer)
         {
             this.map = map;
             this.hero = hero;

@@ -33,3 +33,5 @@ C:\Users\Andrew\RiderProjects\Autobattle\ConsoleApplication1\bin\Debug\System.Va
 C:\Users\Andrew\RiderProjects\Autobattle\ConsoleApplication1\obj\Debug\ConsoleApplication1.csproj.CopyComplete
 C:\Users\Andrew\RiderProjects\Autobattle\ConsoleApplication1\bin\Debug\Newtonsoft.Json.dll
 C:\Users\Andrew\RiderProjects\Autobattle\ConsoleApplication1\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Andrew\RiderProjects\Autobattle\ConsoleApplication1\bin\Debug\Ninject.dll
+C:\Users\Andrew\RiderProjects\Autobattle\ConsoleApplication1\bin\Debug\Ninject.xml

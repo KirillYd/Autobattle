@@ -4,6 +4,7 @@ using System.IO;
 using ConsoleApplication1.Interfaces;
 using System.Text.Json;
 using System.Threading.Tasks;
+using Ninject;
 
 namespace ConsoleApplication1
 {
@@ -11,19 +12,24 @@ namespace ConsoleApplication1
     {
         public static void Main(string[] args)
         {
-            string jsonFilePath = "../../data.json";
+            /*string jsonFilePath = "../../data.json";
 
-            var data = new JsonReader(jsonFilePath);
+            var data = new JsonReader();
 
             var weapons = data.GetWeapons();
             var heroBody = data.GetBodyParts();
             var enemyBody = data.GetBodyParts();
 
-            var hero = new Hero(heroBody, weapons);
-            var enemy = new Enemy(enemyBody, weapons);
+            var hero = new Hero();
+            var enemy = new Enemy();
 
-            var map = new Map() { size = 1000, isolationDegree = 0.35};
-            var game = new Game(map, hero, enemy, Console.Out);
+            var map = new Map() { size = 1000, isolationDegree = 0.35};*/
+            /*var game = new Game(map, hero, enemy, Console.Out);
+            game.Battle();*/
+            
+            IKernel kernel = new StandardKernel(new ConfigModule());
+
+            var game = kernel.Get<IGame>();
             game.Battle();
         }
     }

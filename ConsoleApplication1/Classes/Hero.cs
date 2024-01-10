@@ -9,11 +9,12 @@ namespace ConsoleApplication1
     {
         public IBodyPart[] body { get; set; }
         public IWeapon[] weapons { get; set; }
+        private ICharacterFabric fabric { get; set; }
         
-        public Hero(IBodyPart[] body, IWeapon[] weapons)
+        public Hero(ICharacterFabric fabric)
         {
-            this.body = body;
-            this.weapons = weapons;
+            weapons = fabric.CreateWeapons();
+            body = fabric.CreateBody();
         }
 
         public double getBestDamage(IMap map)
