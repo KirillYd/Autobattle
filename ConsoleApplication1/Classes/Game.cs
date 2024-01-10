@@ -14,6 +14,9 @@ namespace ConsoleApplication1
         private readonly TextWriter writer;
         private Random rnd = new Random();
 
+        public double takenDamage = 0;
+        public double dealtDamage = 0;
+
         public Game(IMap map, [Named("Hero")] ICharacter hero, [Named("Enemy")] ICharacter enemy, TextWriter writer)
         {
             this.map = map;
@@ -22,22 +25,51 @@ namespace ConsoleApplication1
             this.writer = writer;
         }
 
-        public void DoNextStep()
+        public void DoNextStep(ICharacter assaulter, ICharacter defender)
         {
-            var heroDamage = hero.getBestDamage(map);
-            var enemyDamage = enemy.getBestDamage(map); 
-            hero.GetRandomBodyPart(rnd).TakeDamage(enemyDamage);
-            enemy.GetRandomBodyPart(rnd).TakeDamage(heroDamage);
+            var damage = assaulter.getBestDamage(map);
+            defender.GetRandomBodyPart(rnd).TakeDamage(damage);
+            MakeStatistics(assaulter, damage);
+            
+            if (!defender.isAlive())
+            {
+                GetStatistics();
+                writer.WriteLine("\n" + defender.GetType().Name + " was defeated");
+            }
+            
         }
+
+        public void MakeStatistics(ICharacter assaulter, double damage)
+        {
+            if (assaulter.GetType().Name == "Hero")
+            {
+                dealtDamage += damage;
+            }
+            else
+            {
+                takenDamage += damage;
+            }
+        }
+
+        public void GetStatistics()
+        {
+            writer.WriteLine("Получено урона: " + takenDamage);
+            writer.WriteLine("Нанесено урона: " + dealtDamage);
+        }
+
 
         public void Battle()
         {
+            var flag = false;
             writer.WriteLine("Игра началась");
             while(hero.isAlive() && enemy.isAlive())
             {
-                DoNextStep();
-            }   
-            writer.WriteLine("game over");
+                if (flag)
+                    DoNextStep(hero, enemy);
+                else 
+                    DoNextStep(enemy, hero);
+                flag = !flag;
+            }
         }
     }
 }

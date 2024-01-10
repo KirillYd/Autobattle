@@ -14,5 +14,10 @@ namespace ConsoleApplication1
         {
             return new JsonReader().GetBodyParts();
         }
+
+        public Tuple<double, double> GetMapStats()
+        {
+            return new JsonReader().GetMapStats();
+        }
     }
 }

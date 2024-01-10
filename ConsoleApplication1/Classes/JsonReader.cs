@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Globalization;
 using System.IO;
 using System.Text.Json;
 using ConsoleApplication1.Interfaces;
@@ -36,8 +38,7 @@ namespace ConsoleApplication1
         public IWeapon[] GetWeapons()
         {
             List<IWeapon> weapons = new List<IWeapon>();
-
-            // Создать объекты класса Weapon из данных JSON
+            
             foreach (var weaponData in Data["weapons"])
             {
                 var weaponProperties = JsonSerializer.Deserialize<Dictionary<string, object>>(weaponData.Value.ToString());
@@ -63,6 +64,14 @@ namespace ConsoleApplication1
 
             return new BulletType(bulletProperties.bulletType, bulletProperties.accuracy, bulletProperties.damage);
         }
-        
+
+        public Tuple<double,double> GetMapStats()
+        {
+            
+            var size = double.Parse(Data["map"]["size"].ToString());
+            var isolationDegree = Convert.ToDouble(Data["map"]["isolationDegree"].ToString(), CultureInfo.InvariantCulture);
+            return new Tuple<double,double>(size, isolationDegree);
+        }
+
     }
 }

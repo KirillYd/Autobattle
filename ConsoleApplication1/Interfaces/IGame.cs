@@ -9,7 +9,7 @@ namespace ConsoleApplication1.Interfaces
         ICharacter hero { get; set; }
         ICharacter enemy { get; set; }
 
-        void DoNextStep();
+        void DoNextStep(ICharacter assaulter, ICharacter defender);
 
         void Battle();
     }

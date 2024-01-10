@@ -6,11 +6,12 @@ namespace ConsoleApplication1
     {
         public double size { get; set; }
         public double isolationDegree { get; set; }
-
-        public Map()
+        public ICharacterFabric faric;
+        public Map(ICharacterFabric fabric)
         {
-            size = 1000;
-            isolationDegree = 0.8;
+            var stats = fabric.GetMapStats();
+            size = stats.Item1;
+            isolationDegree = stats.Item2;
         }
     }
 }
