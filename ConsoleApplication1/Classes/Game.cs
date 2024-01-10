@@ -24,10 +24,8 @@ namespace ConsoleApplication1
         public void DoNextStep()
         {
             var heroDamage = hero.getBestDamage(map);
-            var enemyDamage = enemy.getBestDamage(map);
-            var part = hero.GetRandomBodyPart(rnd);
-            part.TakeDamage(enemyDamage);
-            writer.WriteLine(part.partType);
+            var enemyDamage = enemy.getBestDamage(map); 
+            hero.GetRandomBodyPart(rnd).TakeDamage(enemyDamage);
             enemy.GetRandomBodyPart(rnd).TakeDamage(heroDamage);
         }
 
