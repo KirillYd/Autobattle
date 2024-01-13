@@ -5,19 +5,24 @@ namespace ConsoleApplication1
 {
     public class CharacterFabric: ICharacterFabric
     {
+        private IDataReader dataReader;
+        public CharacterFabric(IDataReader dataReader)
+        {
+            this.dataReader = dataReader;
+        }
         public IWeapon[] CreateWeapons()
         {
-            return new JsonReader().GetWeapons();
+            return dataReader.GetWeapons();
         }
 
         public IBodyPart[] CreateBody()
         {
-            return new JsonReader().GetBodyParts();
+            return dataReader.GetBodyParts();
         }
 
-        public Tuple<double, double> GetMapStats()
+        public double[] GetMapStats()
         {
-            return new JsonReader().GetMapStats();
+            return dataReader.GetMapStats();
         }
     }
 }

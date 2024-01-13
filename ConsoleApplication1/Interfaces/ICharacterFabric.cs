@@ -6,6 +6,6 @@ namespace ConsoleApplication1.Interfaces
     {
         IWeapon[] CreateWeapons();
         IBodyPart[] CreateBody();
-        Tuple<double, double> GetMapStats();
+        double[] GetMapStats();
     }
 }

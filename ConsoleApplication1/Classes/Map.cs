@@ -10,8 +10,8 @@ namespace ConsoleApplication1
         public Map(ICharacterFabric fabric)
         {
             var stats = fabric.GetMapStats();
-            size = stats.Item1;
-            isolationDegree = stats.Item2;
+            size = stats[0];
+            isolationDegree = stats[1];
         }
     }
 }

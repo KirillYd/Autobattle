@@ -88,6 +88,7 @@
         <Compile Include="Interfaces\IBodyPart.cs" />
         <Compile Include="Interfaces\IBullet.cs" />
         <Compile Include="Interfaces\ICharacter.cs" />
+        <Compile Include="Interfaces\IDataReader.cs" />
         <Compile Include="Interfaces\IGame.cs" />
         <Compile Include="Interfaces\IMap.cs" />
         <Compile Include="Interfaces\IWeapon.cs" />

@@ -21,6 +21,7 @@ namespace ConsoleApplication1
             Bind<IBodyPart>().To<BodyPart>();
             Bind<IBullet>().To<BulletType>();
             Bind<TextWriter>().ToConstant(Console.Out);
+            Bind<IDataReader>().To<JsonReader>();
         }
     }
 }

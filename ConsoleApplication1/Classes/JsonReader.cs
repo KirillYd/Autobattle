@@ -7,10 +7,10 @@ using ConsoleApplication1.Interfaces;
 
 namespace ConsoleApplication1
 {
-    public class JsonReader
+    public class JsonReader: IDataReader
     {
         private readonly string FilePath = "../../data.json";
-        private readonly Dictionary<string, Dictionary<string, object>> Data;
+        public Dictionary<string, Dictionary<string, object>> Data { get; }
 
         public JsonReader()
         {
@@ -65,12 +65,11 @@ namespace ConsoleApplication1
             return new BulletType(bulletProperties.bulletType, bulletProperties.accuracy, bulletProperties.damage);
         }
 
-        public Tuple<double,double> GetMapStats()
+        public double[] GetMapStats()
         {
-            
             var size = double.Parse(Data["map"]["size"].ToString());
             var isolationDegree = Convert.ToDouble(Data["map"]["isolationDegree"].ToString(), CultureInfo.InvariantCulture);
-            return new Tuple<double,double>(size, isolationDegree);
+            return new double[] {size, isolationDegree};
         }
 
     }
