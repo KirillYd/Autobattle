@@ -9,12 +9,13 @@ namespace ConsoleApplication1
 {
     public class JsonReader: IDataReader
     {
-        private readonly string FilePath = "../../data.json";
+        private readonly string filePath;
         public Dictionary<string, Dictionary<string, object>> Data { get; }
 
-        public JsonReader()
+        public JsonReader(string filePath)
         {
-            string jsonContent = File.ReadAllText(FilePath);
+            this.filePath = filePath;
+            string jsonContent = File.ReadAllText(filePath);
             Data = JsonSerializer.Deserialize<Dictionary<string, Dictionary<string, object>>>(jsonContent);
         }
 

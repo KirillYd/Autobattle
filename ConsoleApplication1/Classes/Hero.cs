@@ -1,5 +1,6 @@
 using System;
 using System.Linq;
+using System.Net.Mime;
 using ConsoleApplication1.Interfaces;
 
 
@@ -10,14 +11,24 @@ namespace ConsoleApplication1
         public IBodyPart[] body { get; set; }
         public IWeapon[] weapons { get; set; }
         private ICharacterFabric fabric { get; set; }
-        
+        private int ChoosenWeapon = 0;
         public Hero(ICharacterFabric fabric)
         {
             weapons = fabric.CreateWeapons();
             body = fabric.CreateBody();
         }
 
-        public double getBestDamage(IMap map)
+        public double GetBestDamage(IMap map)
+        {
+            if (ChoosenWeapon == -1)
+            {
+                GetBestWeapon(map);
+            }
+            
+            return weapons[ChoosenWeapon].GetAverageDamage(map);
+        }
+
+        private void GetBestWeapon(IMap map)
         {
             double bestDamage = 0;
             foreach (var weapon in weapons)
@@ -25,13 +36,12 @@ namespace ConsoleApplication1
                 if (weapon.GetAverageDamage(map) > bestDamage)
                 {
                     bestDamage = weapon.GetAverageDamage(map);
+                    ChoosenWeapon = Array.IndexOf(weapons, weapon);
                 }
             }
-            
-            return bestDamage;
         }
 
-        public bool isAlive()
+        public bool IsAlive()
         {
             var damagedPartCnt = 0;
             foreach (var bodyPart in body)

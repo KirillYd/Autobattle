@@ -4,7 +4,7 @@ namespace ConsoleApplication1
 {
     public class BodyPart: IBodyPart
     {
-        public double hp { get; set; }
+        public double hp {  get; set; }
         public double armorInfluence { get; set; }
         public string partType { get; set; }
         

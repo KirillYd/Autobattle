@@ -17,7 +17,10 @@ namespace ConsoleApplication1
         public double takenDamage = 0;
         public double dealtDamage = 0;
 
-        public Game(IMap map, [Named("Hero")] ICharacter hero, [Named("Enemy")] ICharacter enemy, TextWriter writer)
+        public Game(IMap map, 
+            [Named("Hero")] ICharacter hero, 
+            [Named("Enemy")] ICharacter enemy, 
+            TextWriter writer)
         {
             this.map = map;
             this.hero = hero;
@@ -27,11 +30,11 @@ namespace ConsoleApplication1
 
         public void DoNextStep(ICharacter assaulter, ICharacter defender)
         {
-            var damage = assaulter.getBestDamage(map);
+            var damage = assaulter.GetBestDamage(map);
             defender.GetRandomBodyPart(rnd).TakeDamage(damage);
             MakeStatistics(assaulter, damage);
             
-            if (!defender.isAlive())
+            if (!defender.IsAlive())
             {
                 GetStatistics();
                 writer.WriteLine("\n" + defender.GetType().Name + " was defeated");
@@ -62,7 +65,7 @@ namespace ConsoleApplication1
         {
             var flag = false;
             writer.WriteLine("Игра началась");
-            while(hero.isAlive() && enemy.isAlive())
+            while(hero.IsAlive() && enemy.IsAlive())
             {
                 if (flag)
                     DoNextStep(hero, enemy);

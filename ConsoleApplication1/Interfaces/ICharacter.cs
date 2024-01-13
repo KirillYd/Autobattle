@@ -8,8 +8,8 @@ namespace ConsoleApplication1.Interfaces
         
         IWeapon[] weapons { get; set; }
         
-        double getBestDamage(IMap map);
-        bool isAlive();
+        double GetBestDamage(IMap map);
+        bool IsAlive();
         IBodyPart GetRandomBodyPart(Random rnd);
     }
 }

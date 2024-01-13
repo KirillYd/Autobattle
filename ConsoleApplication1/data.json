@@ -1,7 +1,7 @@
 ﻿{
   "map": {
     "size": 500,
-    "isolationDegree": 0.8
+    "isolationDegree": 0.1
   },
   "body":
   {

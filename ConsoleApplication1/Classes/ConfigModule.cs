@@ -16,12 +16,14 @@ namespace ConsoleApplication1
             Bind<IMap>().To<Map>();
             Bind<ICharacter>().To<Hero>().Named("Hero");;
             Bind<ICharacter>().To<Enemy>().Named("Enemy");
-            Bind<ICharacterFabric>().To<CharacterFabric>();
+            Bind<ICharacterFabric>().To<CharacterFabric>().InSingletonScope();
             Bind<IWeapon>().To<Weapon>();
             Bind<IBodyPart>().To<BodyPart>();
             Bind<IBullet>().To<BulletType>();
             Bind<TextWriter>().ToConstant(Console.Out);
-            Bind<IDataReader>().To<JsonReader>();
+            Bind<IDataReader>().To<JsonReader>()
+                .InSingletonScope()
+                .WithConstructorArgument("filePath", "../../data.json");
         }
     }
 }
