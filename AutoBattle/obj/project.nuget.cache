@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "y1+iJzMRiDvJh1PEZ+eZ2JxuqktpWU1BcHrr1M0Act3+3fzPAffDYBDJwcXVD6KCRpAKIJhW4eibRkFngAPuLQ==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Andrew\\RiderProjects\\AutoBattle\\AutoBattle\\AutoBattle.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Andrew\\.nuget\\packages\\ninject\\4.0.0-beta.1\\ninject.4.0.0-beta.1.nupkg.sha512"
+  ],
+  "logs": []
+}

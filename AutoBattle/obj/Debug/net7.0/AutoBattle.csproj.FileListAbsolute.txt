@@ -1,0 +1,17 @@
+C:\Users\Andrew\RiderProjects\Autobattle\AutoBattle\bin\Debug\net7.0\AutoBattle.exe
+C:\Users\Andrew\RiderProjects\Autobattle\AutoBattle\bin\Debug\net7.0\AutoBattle.deps.json
+C:\Users\Andrew\RiderProjects\Autobattle\AutoBattle\bin\Debug\net7.0\AutoBattle.runtimeconfig.json
+C:\Users\Andrew\RiderProjects\Autobattle\AutoBattle\bin\Debug\net7.0\AutoBattle.dll
+C:\Users\Andrew\RiderProjects\Autobattle\AutoBattle\bin\Debug\net7.0\AutoBattle.pdb
+C:\Users\Andrew\RiderProjects\Autobattle\AutoBattle\bin\Debug\net7.0\Ninject.dll
+C:\Users\Andrew\RiderProjects\Autobattle\AutoBattle\obj\Debug\net7.0\AutoBattle.csproj.AssemblyReference.cache
+C:\Users\Andrew\RiderProjects\Autobattle\AutoBattle\obj\Debug\net7.0\AutoBattle.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Andrew\RiderProjects\Autobattle\AutoBattle\obj\Debug\net7.0\AutoBattle.AssemblyInfoInputs.cache
+C:\Users\Andrew\RiderProjects\Autobattle\AutoBattle\obj\Debug\net7.0\AutoBattle.AssemblyInfo.cs
+C:\Users\Andrew\RiderProjects\Autobattle\AutoBattle\obj\Debug\net7.0\AutoBattle.csproj.CoreCompileInputs.cache
+C:\Users\Andrew\RiderProjects\Autobattle\AutoBattle\obj\Debug\net7.0\AutoBattle.csproj.CopyComplete
+C:\Users\Andrew\RiderProjects\Autobattle\AutoBattle\obj\Debug\net7.0\AutoBattle.dll
+C:\Users\Andrew\RiderProjects\Autobattle\AutoBattle\obj\Debug\net7.0\refint\AutoBattle.dll
+C:\Users\Andrew\RiderProjects\Autobattle\AutoBattle\obj\Debug\net7.0\AutoBattle.pdb
+C:\Users\Andrew\RiderProjects\Autobattle\AutoBattle\obj\Debug\net7.0\AutoBattle.genruntimeconfig.cache
+C:\Users\Andrew\RiderProjects\Autobattle\AutoBattle\obj\Debug\net7.0\ref\AutoBattle.dll
